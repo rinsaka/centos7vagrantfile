@@ -12,7 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centos7.2"
+  # config.vm.box = "centos7.2"
+  config.vm.box = "centos/7"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -56,6 +57,10 @@ Vagrant.configure("2") do |config|
   #   # Customize the amount of memory on the VM:
       # 標準は640MB -> これでは mecab-ipadic-neologd のインストールができない
     vb.memory = "2048"
+
+    # Customize the number of CPU Cores:
+    # Anaconda インストールには 2 CPU 以上が必要
+    vb.cpus = 2
   end
   #
   # View the documentation for the provider you are using for more
